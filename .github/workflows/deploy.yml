@@ -10,9 +10,12 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: costum
+        id: costum    
         uses: ./.github/actions/cashed-deps
         with:
           caching: 'false'
+      - name: output information 
+        run: echo "chache used ${{ steps.costum.outputs.used-cache }}"
       - name: Lint code
         run: npm run lint
   test:
