@@ -87,3 +87,5 @@ jobs:
           bucket: trying-esraa
           bucket-region: us-east-1
           dist-folder: ./dist
+      - name: s3
+        run: aws s3api head-object --bucket trying-esraa --key index.html` 
